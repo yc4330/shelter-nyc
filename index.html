@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Story template</title>
-
+    <title>Crime around migrant shelters</title>
+    
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -26,11 +24,31 @@
         }
 
         .header {
-            padding: 3em 0;
+            padding: 3em 0 2em 0;
+            max-width: 640px;
+            margin: auto;
+            text-shadow: 0px 2px 4px #000000;
+            color: white;
+        }
+
+        .subhead {
+            font-family: 'Lora', Georgia, serif;
+            max-width: 640px;
+            margin: auto;
+            text-shadow: 0px 0px 4px rgb(0, 0, 0);
+            color: white;
+        }
+
+        .background_image {
+            background-image: url('doc/recreation-center.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
         }
 
         a {
-            color: #f05349;
+            color: #a40b00;
         }
 
         .footer {
@@ -39,6 +57,14 @@
             font-size: 0.8em;
             margin-top: 4em;
             padding: 4em 0;
+        }
+
+        .credit{
+            text-align: right;
+            margin: 20px;
+            font-size: 0.8em;
+            color: white;
+            text-shadow: 0px 0px 4px rgb(0, 0, 0);
         }
 
         figure {
@@ -60,17 +86,7 @@
             line-height: 1.1;
         }
 
-        .subhead {
-            font-family: 'Lora', Georgia, serif;
-        }
-
-        .full-width figure {
-            text-align: center;
-        }
-
-        iframe,
-        img,
-        video {
+        iframe, img {
             max-width: 100%;
         }
 
@@ -95,104 +111,121 @@
             background: #fff880;
         }
 
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            width: 92%;
+            gap: 2em;
+            justify-content: center;
+            align-items: center;
+            margin: 0 2%;
+        }
+
+        .column-container {
+            flex-grow: 1;
+        }
+
+        .responsive-img1 {
+        background-image: url('doc/chart1.jpg');
+        background-size: 100%;
+        }
+
+        .responsive-img2 {
+        background-image: url('doc/chart2-desktop.jpg');
+        background-size: 100%;
+        }
+
         /* margin on mobile */
         @media (max-width: 640px) {
             body {
                 font-size: 18px;
             }
-
             .content {
                 padding-left: 0.5em;
                 padding-right: 0.5em;
             }
+            .header {
+                padding: 1em 0 1em 0;
+            }
+            .row-container {
+                flex-direction: column;
+            }
+            .responsive-img2 {
+            background-image: url('doc/chart2-mobile.png');
+        }
         }
     </style>
-    <style>
-        .with-image-bg,
-        .with-video-bg {
-            position: relative;
-            background-size: cover;
-            margin-bottom: 2em;
-
-            /* Center everything inside */
-            min-height: 70svh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            /* White text with a shadow */
-            color: white;
-            text-shadow: 0px 0px 30px black,
-                0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .with-image-bg {
-            background-image: url('bg-image.jpg');
-        }
-
-        .video-background {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .video-background video {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="header with-image-bg">
+    </head>
+  <body>
+    
+        <div class="background_image">
+            <h1 class="header">Does crime increase around migrant shelters? Just illusion</h1>
+            <p class="subhead">A medium-sized shelter has no change at all, and the “epicenter” has no spreading effect.</p>
+            <p class="credit">Photo from Wikipedia. The recreation center in Sunset Park is now used as a migrant shelter.</a></p>
+        </div>
+        <br>
         <div class="content">
-            <h1>This is the headline of the story you are about to read</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
-        </div>
-    </div>
-    <div class="content">
         <div class="byline">
-            <p>By <a href="https://jonathansoma.com">Jonathan Soma</a></p>
+            <p>By <a href="https://yc4330.github.io/">Yuqi Cheng</a>, Julie Zhu</p>
         </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.</p>
-    </div>
 
-    <div class="header with-video-bg">
-        <div class="video-background">
-            <video src="bg-video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
-        </div>
-        <div class="content">
-            <h1>Here is a header with a video background</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
-        </div>
-    </div>
-    <div class="content">
-        <div class="byline">
-            <p>By <a href="https://jonathansoma.com">Jonathan Soma</a></p>
-        </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>You can use this for things other than headers if you want, too.</p>
-    </div>
+
+<p>Crime around shelters is by no means a new concern raised by shelter opponents. As immigrants continue flocking into shelters in New York City, the fear points to a more specific direction – immigrants.</p>
+<p>New York City is struggling to house asylum seekers. As of late November, more than 66,300 migrants are currently staying in shelters, which is more than the capacity for all of the City’s subways.</p>
+<p>More than 213 homeless shelters are operating across the five boroughs, but you probably don’t know where they are. Shelters can be everywhere: hotels, office buildings, school gyms, park recreation centers, cruise ship terminals, and tents in parking lots. </p>        
+<p>Local communities are sometimes told at the last minute that a shelter has been earmarked for the site. But when residents somehow get to know that a new one will be built in the neighborhood, many of the shelter proposals have been met with pushback. In some cases, the city has retreated, while the majority of others continued despite angry neighbors. </p>
+<p>Is the fear of crime based on fact? It is time to see what the numbers say.</p>
+
+<h3>A medium-sized shelter clashes with local life: Sunset Park, Brooklyn </h3>
+<p>It has been four months since the recreation center in Sunset Park, Brooklyn opened as an asylum for immigrants. The shelter is a typical one in size, housing about 100 immigrants. Located in a park, a place where local citizens enjoy their lives, it has a direct impact on residents: they can no longer play basketball or dance indoors.</p>
+<p>Roughly 100 residents gathered to protest on Aug. 6, not only angry about the loss of public space but also fearing rising crime. </p>
+<p>Many of the residents themselves are first-generation immigrants who speak Cantonese and Mandarin. The new immigrants living in the shelter came from South America and spoke Spanish. Most of them didn't know English. When the shelter was suddenly put into use, the racial distribution of the neighborhood underwent a drastic change. </p>
+<p>Five days after the protest, many residents are still active in the park. On a sunny workday morning, an elderly woman was playing tai-chi under a tree, and a young mother was pushing a baby carriage, and a retired man was chatting with his friend. From their position, the gate of the recreation center could be seen, along with volunteers who were handing out supplies to migrants.</p>
+<p>Some brown-skinned young men sat on a nearby bench. They were the immigrants living in this shelter in Sunset Park. Although the residents were complaining about the potential safety concerns, they showed no sign of repulsion to these young men. </p>
+<p>Immigrants have no tags on their foreheads. The residents walking in the park did not realize that these well-behaved men were the new immigrants they feared.</p>
+<p>Now, more quantitative measures can be taken. According to the crime complaint data by the NYPD, the number of crimes is available within two months before and after the shelter was put into effect, so that the comparison can be made.</p>
+<p>The chart below shows how crime has changed near Sunset Park. The yellow highlighted sign points to the recreation center located on the southeast side of the park, which is the shelter itself. The color of each block represents the change in crime.</p>
+<p>No significant changes can be seen around Sunset Park, as the blocks are all in light color. </p>
+<p>In the two months since the recreation center opened as an asylum for about 100 single-men migrants, there has been no discernible change in the number of crimes nearby.</p>
+<p>It is true that residents' recreational spaces have been occupied. But based on two months of data, there is no need to worry about crime.</p>
+<figure>
+            <img
+                src="doc/sunset-park.jpg">
+</figure>
+
+<h3>The “epicenter” of the city migrant crisis: Roosevelt Hotel, Manhattan</h3>
+<p>The Roosevelt Hotel has become the “epicenter” of the migrant crisis in New York City since it opened on May 12, 2023. As one of the biggest shelters, it houses 1000 migrant families, while serving as the 24/7 migrant arrival center as well. </p>
+<p>Located in a bustling financial district, it creates a strong contrast in the landscape. Children are horseplaying near suitcases, and their parents lined up outside the entrance of the hotel, the line so long that it went around the street corner. One has to see it to believe how many people can fit in this block. </p>
+<p>And that's not the worst of it. At the end of July, some single men of the migrants slept on cardboard on the sidewalks, while pedestrians pounded the pavement around them on their way to work, until the Mayor’s visit on Aug. 3. </p>
+<p>Of course, the protesters will not be absent here. On Sept. 15, when democrats were having a press conference inside the Roosevelt Hotel, their words were drowned out by the furious anti-migrant protestors on the street, who shouted: “Sent them back!”, which further intensified the situation.</p>
+<p>The most recent crime data released by the NYPD is till the end of September. Since the Roosevelt Hotel has been serving as a shelter since the middle of May, it provides a longer time period to compare changes in the number of crimes nearby. </p>
+<p>The chart below shows how crime has changed near the Roosevelt Hotel. The yellow highlighted sign roughly points to the hotel, as it occupies an entire city block. </p>
+<p>From the chart, both the hotel and its two nearby blocks have seen an increase in the number of crime complaint data. However, there does not seem to be a continuous effect on crime beyond one intersection.</p>
+<p>This suggests that even in the most crowded shelters like the Roosevelt Hotel, the increase in crime occurred only in the adjacent blocks and had no spreading effect further.</p>
+<figure>
+    <img
+        src="doc/roosevelt-hotel.jpg">
+</figure>
+
+<h3>The fear: longstanding human reactions</h3>
+<p>The safety concerns of shelters are not coming out for no reason. </p>
+<p>In a public safety meeting, Rev. Carlene O. Thorbs, the Chairperson of Community Board 12, said her office had been getting phone calls regarding the asylum seekers doing drugs, prostitution, being on people’s property illegally, and not being invited. </p>
+<p>“I have store owners who have been afraid to open their doors because of the men hanging out,” said Thorbs.</p>
+<p>Fear of “men hanging out” is common to see in residents who are unwelcome immigrants and their shelters. A large shelter accommodates a large number of migrants, many of whom have no job. If the shelter is not intended for families, it is easy to see the surrounding streets crowded with unemployed single men.</p>
+<p>“(The fears) are all human reactions,” said Kristi Coale, a freelance writer who wrote about crime rates around homeless shelters in San Francisco. “It’s a level of discomfort that people feel of being around people who aren't like them.” </p>
+<p>When navigation centers, which served as temporary shelters for homeless people, made their way into more neighborhoods in San Francisco, they were opposed by some local residents in 2020. This inspired Kristi to look into crime data, and found no pattern of rising crime in the months that follow the opening of a center.</p>
+<p>The history does not just go back to 2020. Tracing back as far as 1905, the New York Times had recorded people worrying about criminality, assuming that outsiders bring criminality and disease, according to Nara Milanich, Professor of History at Barnard College. </p>
+<p>Nara understands that people fear something that they do not know. However, she said: “The association between migration and crime is a longstanding one that has no basis in fact and every basis in fear.”</p>
+<p>“It's really critical to challenge that narrative, which is just frankly, entirely false and does a disservice not only to immigrants but to our communities in general,” Nara said.</p>
+
+
+</div>
+    
     <div class="footer">
         <div class="content">
-            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>.
-                Delete these lines
-                when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+            <p>See methodology in this <a href="https://docs.google.com/document/d/1C0zD9vzU-L4zeAmWfEY2iRy4fpfn7pqIxu_l9qWUPb8/edit?usp=sharing">google doc</a>.</p>
+            <p>You can find the code and some data for this project <a href="https://yc4330.github.io/eviction-EDA">here</a>. </p>
         </div>
     </div>
-
 </body>
-
 </html>
